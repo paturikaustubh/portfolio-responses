@@ -77,8 +77,8 @@ export default function Responses({
           Logout
         </button>
       </div>
-      <div className="mt-8 flex md:flex-row flex-col md:justify-between justify-center md:items-center items-start gap-4 flex-wrap">
-        <span className="text-xl">
+      <div className="mt-8 flex md:flex-row flex-col md:justify-between justify-center md:items-center items-start gap-x-4 gap-y-6 flex-wrap">
+        <span className="md:text-xl">
           {docs.length} responses as of {currentTime}
         </span>
         <div className="flex items-center gap-8">

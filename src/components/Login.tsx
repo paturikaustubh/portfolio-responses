@@ -21,12 +21,14 @@ export default function Login({
 
   return (
     <main className="flex justify-center items-center h-[100dvh] p-4 overflow-auto">
-      <section className="flex md:flex-row flex-col lg:items-start lg:justify-between bg-neutral-800 rounded-md lg:p-8 p-4 gap-8 lg:w-3/4 w-full">
-        <div className="flex flex-col gap-3 grow">
-          <p className="text-5xl font-semibold">Welcome Back!</p>
-          <p className="text-xl text-neutral-400">Login to continue</p>
+      <section className="flex md:flex-row flex-col items-start justify-between overflow-auto bg-neutral-800 rounded-md md:p-8 p-6 gap-x-8 gap-y-14 lg:w-3/4 w-full md:h-fit">
+        <div className="flex flex-col md:gap-3 gap-1 grow">
+          <p className="md:text-5xl text-4xl font-semibold">Welcome Back!</p>
+          <p className="md:text-xl text-lg text-neutral-400">
+            Login to continue
+          </p>
         </div>
-        <div className="flex flex-col gap-4 grow">
+        <div className="flex flex-col gap-4 md:grow h-fit md:w-fit w-full mt-auto">
           <p className="text-3xl font-semibold text-center">Login</p>
           <form
             onSubmit={(e) => {
