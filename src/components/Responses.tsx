@@ -59,6 +59,8 @@ export default function Responses({
 
         setDocs(tempResult);
       })
+      .catch((e) => console.log(e))
+
       .finally(() => Loading(false));
   }, []);
 
