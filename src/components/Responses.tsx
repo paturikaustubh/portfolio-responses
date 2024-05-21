@@ -82,18 +82,27 @@ export default function Responses({
           {docs.length} responses as of {currentTime}
         </span>
         <div className="flex items-center gap-8">
-          <span className="dropdown-label" data-label="Sort By">
+          <div className="dropdown-label" data-label="Sort By">
             <button
               onClick={() => setOpenSortMeth((prevVal) => !prevVal)}
-              className={`border-2 border-stone-400 flex gap-4 items-center justify-between pl-4 pr-2 py-2 ${
+              className={`border-2 border-stone-400 duration-200 flex gap-4 items-center justify-between pl-4 pr-2 py-2 ${
                 openSortMeth ? "rounded-t-md" : "rounded-md"
               }`}
             >
               {sortMethMapper[sortingMeth]}
-              <span className="material-symbols-outlined">expand_more</span>
+              <span
+                className={`material-symbols-outlined duration-200 ${
+                  openSortMeth ? "-rotate-180" : ""
+                }`}
+              >
+                expand_more
+              </span>
             </button>
             {openSortMeth && (
-              <div className="absolute -bottom-[265%] w-[inherit] z-10 flex flex-col bg-neutral-900 border-2 py-3 rounded-b-md">
+              <div
+                className="absolute w-full -bottom-[260%]  z-10 flex flex-col bg-neutral-900 border-2 border-neutral-400 py-3 rounded-b-md"
+                style={{ animation: "slide-down-show 0.15s ease-in-out" }}
+              >
                 <button
                   onClick={() => {
                     setSortingMeth("timestamp");
@@ -104,7 +113,7 @@ export default function Responses({
                     );
                     setOpenSortMeth(false);
                   }}
-                  className="px-4 py-2 hover:bg-neutral-700 flex w-full"
+                  className="px-4 py-2 hover:bg-neutral-700 flex w-full duration-200"
                 >
                   Timestamp
                 </button>
@@ -118,25 +127,34 @@ export default function Responses({
                     );
                     setOpenSortMeth(false);
                   }}
-                  className="px-4 py-2 hover:bg-neutral-700 flex w-full"
+                  className="px-4 py-2 hover:bg-neutral-700 flex w-full duration-200"
                 >
                   First Name
                 </button>
               </div>
             )}
-          </span>
-          <span className="dropdown-label" data-label="Sort Order">
+          </div>
+          <div className="dropdown-label" data-label="Sort Order">
             <button
               onClick={() => setOpenSortOrder((prevVal) => !prevVal)}
-              className={`border-2 border-stone-400 flex gap-4 items-center justify-between pl-4 pr-2 py-2 ${
+              className={`border-2 border-stone-400 duration-200 flex gap-4 items-center justify-between pl-4 pr-2 py-2 ${
                 openSortOrder ? "rounded-t-md" : "rounded-md"
               }`}
             >
               {sortOrderMapper[sortingOrder]}
-              <span className="material-symbols-outlined">expand_more</span>
+              <span
+                className={`material-symbols-outlined duration-200 ${
+                  openSortOrder ? "-rotate-180" : ""
+                }`}
+              >
+                expand_more
+              </span>
             </button>
             {openSortOrder && (
-              <div className="absolute -bottom-[270%] z-10 flex flex-col bg-neutral-900 border-2 py-3 rounded-b-md">
+              <div
+                className="absolute w-full -bottom-[260%] z-10 flex flex-col bg-neutral-900 border-2 border-neutral-400 py-3 rounded-b-md"
+                style={{ animation: "slide-down-show 0.15s ease-in-out" }}
+              >
                 <button
                   onClick={() => {
                     setSortingOrder("asc");
@@ -147,7 +165,7 @@ export default function Responses({
                     );
                     setOpenSortOrder(false);
                   }}
-                  className="px-4 py-2 hover:bg-neutral-700 flex w-full"
+                  className="px-4 py-2 hover:bg-neutral-700 flex w-full duration-200"
                 >
                   Ascending
                 </button>
@@ -161,13 +179,13 @@ export default function Responses({
                     );
                     setOpenSortOrder(false);
                   }}
-                  className="px-4 py-2 hover:bg-neutral-700 flex w-full"
+                  className="px-4 py-2 hover:bg-neutral-700 flex w-full duration-200"
                 >
                   Descending
                 </button>
               </div>
             )}
-          </span>
+          </div>
         </div>
       </div>
       <div className="mt-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
