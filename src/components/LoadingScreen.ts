@@ -9,7 +9,7 @@ export default function Loading(
     // CREATE CONTAINER
     const loadingContainer = document.createElement("div");
     loadingContainer.className =
-      "fixed inset-0 w-full h-full flex justify-center items-center z-50 loading-container";
+      "fixed inset-0 w-screen h-screen flex justify-center items-center z-50 loading-container";
     loadingContainer.style.backgroundColor = "rgba(0 0 0 / 0.5)";
     loadingContainer.style.backdropFilter = "blur(5px)";
     loadingContainer.style.animation = "fade-in 150ms ease-in-out forwards";
